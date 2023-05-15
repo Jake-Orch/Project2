@@ -16,13 +16,13 @@ Group.init(
       allowNull: false,
       references: {
         model: "teacher",
-        key: "key",
+        key: "id",
       }
     },
     room: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
+    }
   },
   {
     sequelize,

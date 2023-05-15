@@ -23,12 +23,20 @@ Club.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    day_of_club: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    end_time: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'group',
+    modelName: 'club',
   }
 );
 

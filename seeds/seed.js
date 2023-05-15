@@ -39,7 +39,9 @@ const seedDatabase = async () => {
     for(const parent of parentData){
         await Parent.create({
             ...parent,
-            children: studentData[Math.floor(Math.random() * studentData.length)].id
+            children: studentData[Math.floor(Math.random() * studentData.length)].id,
+            individualHooks: true,
+            returning: true,
         })
     }
 

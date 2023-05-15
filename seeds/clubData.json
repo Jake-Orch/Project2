@@ -1,22 +1,27 @@
 [
     {
-        "id": 1,
-        "room": 3
+        "room": 3,
+        "day_of_club": "Monday",
+        "end_time": "4:30pm"
     },
     {
-        "id": 2,
-        "room": 2
+        "room": 2,
+        "day_of_club": "Tuesday",
+        "end_time": "5pm"
     },
     {
-        "id": 3,
-        "room": 5
+        "room": 5,
+        "day_of_club": "Wednesday",
+        "end_time": "4:30"
     },
     {
-        "id": 4,
-        "room": 1
+        "room": 1,
+        "day_of_club": "Thursday",
+        "end_time": "4:30pm"
     },
     {
-        "id": 5,
-        "room": 4
+        "room": 4,
+        "day_of_club": "Friday",
+        "end_time": "5pm"
     }
 ]

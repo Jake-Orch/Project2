@@ -2,26 +2,31 @@
     {
         "id": 1,
         "name": "John",
-        "parent_names": "Peter Gabriel"
+        "parent_names": "Peter Gabriel",
+        "attendance": true
     },
     {
         "id": 2,
         "name": "Jess",
-        "parent_names": "Jenny Vivek"
+        "parent_names": "Jenny Vivek",
+        "attendance": false
     },
     {
         "id": 3,
         "name": "Jake",
-        "parent_names": "Steven Rogers"
+        "parent_names": "Steven Rogers",
+        "attendance": true
     },
     {
         "id": 4,
         "name": "Kelly",
-        "parent_names": "Andrew Garfield"
+        "parent_names": "Andrew Garfield",
+        "attendance": true
     },
     {
         "id": 5,
         "name": "Liam",
-        "parent_names": "Micheal Bay"
+        "parent_names": "Micheal Bay",
+        "attendance": false
     }
 ]
