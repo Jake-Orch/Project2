@@ -1,22 +1,27 @@
 [
     {
         "name": "M. Johnson",
-        "email": "joshnson@blabla.com"
+        "email": "joshnson@blabla.com",
+        "password": "Password123"
     },
     {
         "name": "J. Richards",
-        "email": "richards@blabla.com"
+        "email": "richards@blabla.com",
+        "password": "Password123"
     },
     {
         "name": "M. Wagsataff",
-        "email": "wagstaff@blabla.com"
+        "email": "wagstaff@blabla.com",
+        "password": "Password123"
     },
     {
         "name": "F. Rosenbury",
-        "email": "rosenbury@blabla.com"
+        "email": "rosenbury@blabla.com",
+        "password": "Password123"
     },
     {
         "name": "T. Redsock",
-        "email": "redsock@blabla.com"
+        "email": "redsock@blabla.com",
+        "password": "Password123"
     }
 ]

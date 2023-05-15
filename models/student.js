@@ -30,7 +30,10 @@ Student.init(
                 key: 'id'
             }
         },
-
+        attendance: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+        }
     },
     {
         sequelize,

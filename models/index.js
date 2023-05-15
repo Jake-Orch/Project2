@@ -36,4 +36,4 @@ Club.belongsTo(Teacher, {
     onDelete: 'CASCADE'
 });
 
-module.exports = { Student, Teacher, Parent, Group };
+module.exports = { Student, Teacher, Parent, Group, Club };
