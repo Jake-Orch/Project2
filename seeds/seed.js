@@ -15,6 +15,8 @@ const seedDatabase = async () => {
         returning: true,
     });
 
+    const parents = await Parent.bulkCreate(parentData);
+
     for(const group of groupData){
         await Group.create({
             ...group,
@@ -32,18 +34,10 @@ const seedDatabase = async () => {
     for(const student of studentData){
         await Student.create({
             ...student,
-            group_id: groupData[Math.floor(Math.random() * groupData.length)].id
+            group_id: groupData[Math.floor(Math.random() * groupData.length)].id,
+            parent_id: parents[Math.floor(Math.random() * parents.length)].id,
         })
     };
-
-    for(const parent of parentData){
-        await Parent.create({
-            ...parent,
-            children: studentData[Math.floor(Math.random() * studentData.length)].id,
-            individualHooks: true,
-            returning: true,
-        })
-    }
 
     process.exit(0)
 };
