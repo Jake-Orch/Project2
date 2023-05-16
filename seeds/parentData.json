@@ -1,27 +1,22 @@
 [
     {
         "name": "Peter Gabriel",
-        "email": "Peter@blabla.com",
-        "password": "Password123"
+        "email": "Peter@blabla.com"
     },
     {
         "name": "Jenny Vivek",
-        "email": "Jenny@blabla.com",
-        "password": "Password123"
+        "email": "Jenny@blabla.com"
     },
     {
         "name": "Steven Rogers",
-        "email": "Steven@blabla.com",
-        "password": "Password123"
+        "email": "Steven@blabla.com"
     },
     {
         "name": "Andrew Garfield",
-        "email": "Andrew@blabla.com",
-        "password": "Password123"
+        "email": "Andrew@blabla.com"
     },
     {
         "name": "Micheal Bay",
-        "email": "Micheal@blabla.com",
-        "password": "Password123"
+        "email": "Micheal@blabla.com"
     }
 ]

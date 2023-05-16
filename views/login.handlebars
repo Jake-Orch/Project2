@@ -1,4 +1,4 @@
-<form action="login" method="post">
+<form>
   <div class="top-nav">
   <img src="" alt="safer-bookings-img" class="logo">
   <a href="#admin">Admin/Safeguarding</a>
@@ -9,13 +9,13 @@
   </div>
 
   <div class="container">
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Username" name="username" required>
+    <label for="email"><b>email</b></label>
+    <input id="email" type="text" placeholder="Email" name="email" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Password" name="psw" required>
+    <input id="password" type="password" placeholder="Password" name="psw" required>
 
-    <button id="" class="active" alt="click to sign in"><span>Sign In</span><svg></svg></button>
+    <button id="sign-in" class="active" alt="click to sign in"><span>Sign In</span><svg></svg></button>
 
     <a href="#forgot-password">Forgot Password?</a>
   </div>
@@ -34,3 +34,4 @@
     </div>
   </footer>
 </form>
+<script src="/login.js"></script>

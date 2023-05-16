@@ -18,9 +18,13 @@ Student.init(
                 len: [2, 40]
             }
         },
-        parent_names: {
-            type: DataTypes.STRING,
+        parent_id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
+            references: {
+                model: "parent",
+                key: "id",
+            }
         },
         group_id: {
             type: DataTypes.INTEGER,

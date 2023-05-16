@@ -4,11 +4,11 @@ const Parent = require('./parent');
 const Group = require('./group');
 const Club = require('./club');
 
-Student.hasMany(Parent, {
-    foreignKey: 'children',
+Parent.hasMany(Student, {
+    foreignKey: 'parent_id',
 });
-Parent.belongsTo(Student, {
-    foreignKey: 'children',
+Student.belongsTo(Parent, {
+    foreignKey: 'parent_id',
     onDelete: 'CASCADE'
 });
 
