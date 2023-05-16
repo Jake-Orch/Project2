@@ -1,14 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\assets\style.css">
-    <link rel="stylesheet" href="..\assets\app.js">
-    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <title>Document</title>
 </head>
+
 <body>
-    
+    <h1 class="p-5 d-flex justify-content-center">Admin / Safeguarding</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+                    Search students
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-5 input-group">
+            <div class="p-5 input-group-prepend">
+                <span class="input-group-text btn btn-primary">Email students parents</span>
+            </div>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+        </div>
+
+        <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+            <fieldset>
+            
+            <!-- Form Name -->
+            <legend>Register new student</legend>
+            
+            <!-- Text input-->
+            
+            <div class="form-group">
+              <label class="col-md-4 control-label">Name</label>  
+              <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="name" placeholder="Name" class="form-control"  type="text">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Parent Name</label>  
+                <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input name="parent-name" placeholder="Parent Name" class="form-control"  type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label">Parent Email</label>  
+                <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input name="name" placeholder="Parent Email" class="form-control"  type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group"> 
+                <label class="col-md-4 control-label">Group</label>
+                  <div class="col-md-4 selectContainer">
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                  <select name="group" class="form-control selectpicker" >
+                    <option value=" " >Plese select the group id</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+              </div>
+        </form>            
 </body>
+
 </html>

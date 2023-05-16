@@ -36,7 +36,7 @@ Student.init(
         },
         attendance: {
             type: DataTypes.BOOLEAN,
-            allowNull: false,
+            allowNull: true,
         }
     },
     {
