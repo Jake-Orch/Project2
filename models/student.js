@@ -34,6 +34,14 @@ Student.init(
                 key: 'id'
             }
         },
+        club_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'club',
+                key: 'id'
+            }
+        },
         attendance: {
             type: DataTypes.BOOLEAN,
             allowNull: true,

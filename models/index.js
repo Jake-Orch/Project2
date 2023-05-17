@@ -36,4 +36,12 @@ Club.belongsTo(Teacher, {
     onDelete: 'CASCADE'
 });
 
+Club.hasMany(Student, {
+    foreignKey: 'club_id',
+});
+Student.belongsTo(Club, {
+    foreignKey: 'club_id',
+    onDelete: 'CASCADE'
+});
+
 module.exports = { Student, Teacher, Parent, Group, Club };

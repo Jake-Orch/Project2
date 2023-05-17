@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Teacher } = require('../../models');
 
 router.post('/login', async (req, res) => {
+    console.log(req.body);
     try {
         const teacherData = await Teacher.findOne({
             where: {email: req.body.email}
@@ -38,7 +39,8 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.post('/signout', (req, res) => {
+router.post('/logout', (req, res) => {
+    console.log(req.session);
     if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
@@ -46,6 +48,26 @@ router.post('/signout', (req, res) => {
     } else {
         res.status(404).end();
     }
+});
+
+router.post('/createparent', (req, res) => {
+    console.log(req.body);
+    res.send('Recieved');
+});
+
+router.post('/createstudent', (req, res) => {
+    console.log(req.body);
+    res.send('Recieved');
+});
+
+router.put('/editparent', (req, res) => {
+    console.log(req.body);
+    res.send('Recieved');
+});
+
+router.put('/editstudent', (req, res) => {
+    console.log(req.body);
+    res.send('Recieved');
 });
 
 

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://code.jquery.com/jquery-3.7.0.js"
   integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
   crossorigin="anonymous">
-  <link rel="stylesheet" href="/assets/style.css">   
+  <link rel="stylesheet" href="/css/styles.css">   
     <title>Safer Bookings</title>
 </head>
 <body class="bg-light">
@@ -17,11 +17,14 @@
             <img src="../../assets/SK logo.png" width="30" height="30" class="d-inline-block align-top" alt="SK logo">
             SafeKeeping
         </a>
-        <a id="tgc">Teacher/Group/Class</a>
-        <a id="sp">Student/Parent</a>
-        <a id="sign-up">Sign-up</a>
-        <a id="login">Login</a>
-        <a id="logout">Logout</a>
+        {{#if loggedIn}}
+        <a href="/tgc">Teacher/Group/Class</a>
+        <a href="/">Student/Parent</a>
+        <button id="logout">Logout</button>
+        {{else}}
+        <a href="/signup">Sign-up</a>
+        <a href="/login">Login</a>
+        {{/if}}
     </nav>
     {{{body}}}
     <footer>
@@ -33,6 +36,7 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="/index.js"></script>
     <script src="/login.js"></script>
+    <script src="/logout.js"></script>
     <script src="/signup.js"></script>
 
     

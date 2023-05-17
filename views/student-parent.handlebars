@@ -1,213 +1,15 @@
 <h1 class="p-5 d-flex justify-content-center bg-primary">Student/Parent Portal</h1>
-    <div class="row p-5">
-        <div class="col">
-            <form class="well form-horizontal" id="contact_form">
-                <fieldset>
-                    <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Register new student</legend>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Name</label>
-                        <div class="inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="name" placeholder="Name" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Parent ID</label>
-                        <div class="electContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                                <select name="parent_id" class="form-control selectpicker">
-                                    <option value=" ">Plese select the students parents ID</option>
-                                    <option>1{{id}}</option>
-                                    <option>2{{id}}</option>
-                                    <option>3{{id}}</option>
-                                    <option>4{{id}}</option>
-                                    <option>5{{id}}</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Group</label>
-                        <div class="electContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                                <select name="group" class="form-control selectpicker">
-                                    <option value=" ">Plese select the group ID</option>
-                                    <option>1{{id}}</option>
-                                    <option>2{{id}}</option>
-                                    <option>3{{id}}</option>
-                                    <option>4{{id}}</option>
-                                    <option>5{{id}}</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-            </form>
-        </div>
-        <div class="col">
-            <form class="well form-horizontal" id="contact_form">
-                <fieldset>
-                    <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Register new parent</legend>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Name</label>
-                        <div class="inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="name" placeholder="Name" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Email</label>
-                        <div class="inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="email" placeholder="Email" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
-            </form>
-        </div>
-    </div>
-    <div class="row p-5">
-        <div class="col">
-            <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Edit Student</legend>
-            <form>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">Select student ID</label>
-                    <div class="electContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <select name="student_id" class="form-control selectpicker">
-                                <option value=" ">Select the ID of the student to edit </option>
-                                <option>1{{id}}</option>
-                                <option>2{{id}}</option>
-                                <option>3{{id}}</option>
-                                <option>4{{id}}</option>
-                                <option>5{{id}}</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+<div class="row p-5">
+    <div class="col">
+        <form class="well form-horizontal" id="register_parent">
+            <fieldset>
+                <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Register new parent</legend>
                 <div class="form-group">
                     <label class="col-md-4 control-label">Name</label>
                     <div class="inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input name="name" placeholder="Name" class="form-control" type="text">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">Select Group</label>
-                    <div class="electContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <select name="new_group_id" class="form-control selectpicker">
-                                <option value=" ">Select the ID of the students new group </option>
-                                <option>1{{id}}</option>
-                                <option>2{{id}}</option>
-                                <option>3{{id}}</option>
-                                <option>4{{id}}</option>
-                                <option>5{{id}}</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">Add Club</label>
-                    <div class="electContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <select name="add_club" class="form-control selectpicker">
-                                <option value=" ">Select the ID of the students new club </option>
-                                <option>1{{id}}</option>
-                                <option>2{{id}}</option>
-                                <option>3{{id}}</option>
-                                <option>4{{id}}</option>
-                                <option>5{{id}}</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">Remove Club</label>
-                    <div class="electContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <select name="remove_club" class="form-control selectpicker">
-                                <option value=" ">Select the ID of the club to remove </option>
-                                <option>1{{id}}</option>
-                                <option>2{{id}}</option>
-                                <option>3{{id}}</option>
-                                <option>4{{id}}</option>
-                                <option>5{{id}}</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">Add parent to student</label>
-                    <div class="electContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <select name="new_parent_id" class="form-control selectpicker">
-                                <option value=" ">Select the ID of the parent you wish to add</option>
-                                <option>1{{id}}</option>
-                                <option>2{{id}}</option>
-                                <option>3{{id}}</option>
-                                <option>4{{id}}</option>
-                                <option>5{{id}}</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">Remove parent from student</label>
-                    <div class="electContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <select name="old_parent_id" class="form-control selectpicker">
-                                <option value=" ">Plese the ID of the parent you wish to remove </option>
-                                <option>1{{id}}</option>
-                                <option>2{{id}}</option>
-                                <option>3{{id}}</option>
-                                <option>4{{id}}</option>
-                                <option>5{{id}}</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="col">
-            <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Edit Parent</legend>
-            <form>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">Select the parent ID</label>
-                    <div class="electContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <select name="parent_id" class="form-control selectpicker">
-                                <option value=" ">Plese the ID of the parent you wish edit </option>
-                                <option>1{{id}}</option>
-                                <option>2{{id}}</option>
-                                <option>3{{id}}</option>
-                                <option>4{{id}}</option>
-                                <option>5{{id}}</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label">Name</label>
-                    <div class="inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input name="new_parent_name" placeholder="Name" class="form-control" type="text">
+                            <input id="parent_name" name="name" placeholder="Name" class="form-control" type="text">
                         </div>
                     </div>
                 </div>
@@ -216,85 +18,291 @@
                     <div class="inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input name="new_parent_email" placeholder="Email" class="form-control" type="text">
+                            <input id="email" name="email" placeholder="Email" class="form-control" type="text">
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
-    </div>
-    <div class="w-100 p-5">
-        <button class="btn btn-primary">Email students parents</button>
-        <select name="group" class="form-control selectpicker">
-            <option value=" ">Select the ID of the subject of the email</option>
-            <option>1{{id}}</option>
-            <option>2{{id}}</option>
-            <option>3{{id}}</option>
-            <option>4{{id}}</option>
-            <option>5{{id}}</option>
-        </select>
-        <textarea class="form-control h-100" aria-label="With textarea"></textarea>
-    </div>
-    <div class="p-5">
-        <h2>Student</h2>
-        <table class="table">
-            <thead>
-                <tr class="bg-info rounded-top">
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Parent ID</th>
-                    <th>Group ID</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>ID 1</td>
-                    <td>Name</td>
-                    <td>Parent</td>
-                    <td>Group ID</td>
-                </tr>
-                <tr>
-                    <td>ID 2</td>
-                    <td>Name</td>
-                    <td>Parent</td>
-                    <td>Group ID</td>
-                </tr>
-                <tr>
-                    <td>ID 3</td>
-                    <td>Name</td>
-                    <td>Parent</td>
-                    <td>Group ID</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="p-5">
-        <h2>Parent</h2>
-        <table class="table">
-            <thead>
-                <tr class="bg-info rounded-top">
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>ID 1</td>
-                    <td>Name</td>
-                    <td>Email</td>
-                </tr>
-                <tr>
-                    <td>ID 2</td>
-                    <td>Name</td>
-                    <td>Email</td>
-                </tr>
-                <tr>
-                    <td>ID 3</td>
-                    <td>Name</td>
+                <button>Register Parent</button>
+        </form>
 
-                    <td>Email</td>
-                </tr>
-            </tbody>
-        </table>
     </div>
+    <div class="col">
+        <form class="well form-horizontal" id="register_student">
+            <fieldset>
+                <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Register new student
+                </legend>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Name</label>
+                    <div class="inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="student_name" name="name" placeholder="Name" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Parent ID</label>
+                    <div class="electContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                            <select id="parent_id" name="parent_id" class="form-control selectpicker">
+                                <option value=" ">Plese select the students parents ID</option>
+                                <option>1{{id}}</option>
+                                <option>2{{id}}</option>
+                                <option>3{{id}}</option>
+                                <option>4{{id}}</option>
+                                <option>5{{id}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Group</label>
+                    <div class="electContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                            <select id="group_id" name="group" class="form-control selectpicker">
+                                <option value=" ">Plese select the group ID</option>
+                                <option>1{{id}}</option>
+                                <option>2{{id}}</option>
+                                <option>3{{id}}</option>
+                                <option>4{{id}}</option>
+                                <option>5{{id}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button>Register Student</button>
+        </form>
+    </div>
+    
+</div>
+<div class="row p-5">
+    <div class="col">
+        <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Edit Student</legend>
+        <form id="edit_student">
+            <div class="form-group">
+                <label class="col-md-4 control-label">Select student ID</label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="student_id_edit" name="student_id" class="form-control selectpicker">
+                            <option value=" ">Select the ID of the student to edit </option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Name</label>
+                <div class="inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="student_name_edit" name="name" placeholder="Name" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Select Group</label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="student_groupid_edit" name="new_group_id" class="form-control selectpicker">
+                            <option value=" ">Select the ID of the students new group </option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Add Club</label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="add_club" name="add_club" class="form-control selectpicker">
+                            <option value=" ">Select the ID of the students new club </option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Remove Club</label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="remove_club" name="remove_club" class="form-control selectpicker">
+                            <option value=" ">Select the ID of the club to remove </option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Add parent to student</label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="new_parent_id" name="new_parent_id" class="form-control selectpicker">
+                            <option value=" ">Select the ID of the parent you wish to add</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Remove parent from student</label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="old_parent_id" name="old_parent_id" class="form-control selectpicker">
+                            <option value=" ">Plese the ID of the parent you wish to remove </option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button>Submit Student Edit</button>
+        </form>
+        
+    </div>
+    <div class="col">
+        <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Edit Parent</legend>
+        <form id="edit_parent">
+            <div class="form-group">
+                <label class="col-md-4 control-label">Select the parent ID</label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="editparent_id" name="parent_id" class="form-control selectpicker">
+                            <option value=" ">Plese the ID of the parent you wish edit </option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Name</label>
+                <div class="inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="editparent_name" name="new_parent_name" placeholder="Name" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Email</label>
+                <div class="inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="editparent_email" name="new_parent_email" placeholder="Email" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+            <button>Submit Parent Edit</button>
+        </form>
+    </div>
+</div>
+{{!-- <div class="w-100 p-5">
+    <button class="btn btn-primary">Email students parents</button>
+    <select name="group" class="form-control selectpicker">
+        <option value=" ">Select the ID of the subject of the email</option>
+        <option>1{{id}}</option>
+        <option>2{{id}}</option>
+        <option>3{{id}}</option>
+        <option>4{{id}}</option>
+        <option>5{{id}}</option>
+    </select>
+    <textarea class="form-control h-100" aria-label="With textarea"></textarea>
+</div> --}}
+<div class="p-5">
+    <h2>Student</h2>
+    <table class="table">
+        <thead>
+            <tr class="bg-info rounded-top">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Parent ID</th>
+                <th>Group ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ID 1</td>
+                <td>Name</td>
+                <td>Parent</td>
+                <td>Group ID</td>
+            </tr>
+            <tr>
+                <td>ID 2</td>
+                <td>Name</td>
+                <td>Parent</td>
+                <td>Group ID</td>
+            </tr>
+            <tr>
+                <td>ID 3</td>
+                <td>Name</td>
+                <td>Parent</td>
+                <td>Group ID</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="p-5">
+    <h2>Parent</h2>
+    <table class="table">
+        <thead>
+            <tr class="bg-info rounded-top">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ID 1</td>
+                <td>Name</td>
+                <td>Email</td>
+            </tr>
+            <tr>
+                <td>ID 2</td>
+                <td>Name</td>
+                <td>Email</td>
+            </tr>
+            <tr>
+                <td>ID 3</td>
+                <td>Name</td>
+
+                <td>Email</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
