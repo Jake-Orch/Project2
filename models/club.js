@@ -19,15 +19,11 @@ Club.init(
         key: "id",
       }
     },
-    room: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
     day_of_club: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    end_time: {
+    activity: {
       type: DataTypes.STRING,
       allowNull: false,
     }
