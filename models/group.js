@@ -19,10 +19,6 @@ Group.init(
         key: "id",
       }
     },
-    room: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    }
   },
   {
     sequelize,
