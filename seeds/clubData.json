@@ -1,27 +1,22 @@
 [
     {
-        "room": 3,
         "day_of_club": "Monday",
-        "end_time": "4:30pm"
+        "activity": "Painting"
     },
     {
-        "room": 2,
         "day_of_club": "Tuesday",
-        "end_time": "5pm"
+        "activity": "Football"
     },
     {
-        "room": 5,
         "day_of_club": "Wednesday",
-        "end_time": "4:30"
+        "activity": "Hockey"
     },
     {
-        "room": 1,
         "day_of_club": "Thursday",
-        "end_time": "4:30pm"
+        "activity": "Tennis"
     },
     {
-        "room": 4,
         "day_of_club": "Friday",
-        "end_time": "5pm"
+        "activity": "Chess"
     }
 ]
