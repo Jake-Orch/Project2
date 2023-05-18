@@ -1,26 +1,21 @@
 [
     {
-        "id": 1,
         "name": "John",
         "attendance": true
     },
     {
-        "id": 2,
         "name": "Jess",
         "attendance": false
     },
     {
-        "id": 3,
         "name": "Jake",
         "attendance": true
     },
     {
-        "id": 4,
         "name": "Kelly",
         "attendance": true
     },
     {
-        "id": 5,
         "name": "Liam",
         "attendance": false
     }

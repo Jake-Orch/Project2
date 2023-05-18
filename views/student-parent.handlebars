@@ -24,7 +24,7 @@
                 </div>
                 <button>Register Parent</button>
         </form>
-
+​
     </div>
     <div class="col">
         <form class="well form-horizontal" id="register_student">
@@ -41,17 +41,15 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Parent ID</label>
+                    <label class="col-md-4 control-label">Parent </label>
                     <div class="electContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                             <select id="parent_id" name="parent_id" class="form-control selectpicker">
-                                <option value=" ">Plese select the students parents ID</option>
-                                <option>1{{id}}</option>
-                                <option>2{{id}}</option>
-                                <option>3{{id}}</option>
-                                <option>4{{id}}</option>
-                                <option>5{{id}}</option>
+                                <option value=" ">Plese select the students parents </option>
+                                {{#each parentData as |parent|}}
+                                <option value={{parent.id}}>{{parent.name}}</option>
+                                {{/each}}
                             </select>
                         </div>
                     </div>
@@ -62,12 +60,10 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                             <select id="group_id" name="group" class="form-control selectpicker">
-                                <option value=" ">Plese select the group ID</option>
-                                <option>1{{id}}</option>
-                                <option>2{{id}}</option>
-                                <option>3{{id}}</option>
-                                <option>4{{id}}</option>
-                                <option>5{{id}}</option>
+                                <option value=" ">Select select the group </option>
+                                {{#each groupData as |group|}}
+                                <option value={{group.id}}>{{group.id}}</option>
+                                {{/each}}
                             </select>
                         </div>
                     </div>
@@ -79,132 +75,18 @@
 </div>
 <div class="row p-5">
     <div class="col">
-        <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Edit Student</legend>
-        <form id="edit_student">
-            <div class="form-group">
-                <label class="col-md-4 control-label">Select student ID</label>
-                <div class="electContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                        <select id="student_id_edit" name="student_id" class="form-control selectpicker">
-                            <option value=" ">Select the ID of the student to edit </option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4 control-label">Name</label>
-                <div class="inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="student_name_edit" name="name" placeholder="Name" class="form-control" type="text">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4 control-label">Select Group</label>
-                <div class="electContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                        <select id="student_groupid_edit" name="new_group_id" class="form-control selectpicker">
-                            <option value=" ">Select the ID of the students new group </option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4 control-label">Add Club</label>
-                <div class="electContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                        <select id="add_club" name="add_club" class="form-control selectpicker">
-                            <option value=" ">Select the ID of the students new club </option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4 control-label">Remove Club</label>
-                <div class="electContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                        <select id="remove_club" name="remove_club" class="form-control selectpicker">
-                            <option value=" ">Select the ID of the club to remove </option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4 control-label">Add parent to student</label>
-                <div class="electContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                        <select id="new_parent_id" name="new_parent_id" class="form-control selectpicker">
-                            <option value=" ">Select the ID of the parent you wish to add</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4 control-label">Remove parent from student</label>
-                <div class="electContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                        <select id="old_parent_id" name="old_parent_id" class="form-control selectpicker">
-                            <option value=" ">Plese the ID of the parent you wish to remove </option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <button>Submit Student Edit</button>
-        </form>
-        
-    </div>
-    <div class="col">
         <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Edit Parent</legend>
         <form id="edit_parent">
             <div class="form-group">
-                <label class="col-md-4 control-label">Select the parent ID</label>
+                <label class="col-md-4 control-label">Select the parent </label>
                 <div class="electContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                         <select id="editparent_id" name="parent_id" class="form-control selectpicker">
-                            <option value=" ">Plese the ID of the parent you wish edit </option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option value=" ">Select the parent you wish edit </option>
+                            {{#each parentData as |parent|}}
+                                <option value={{parent.id}}>{{parent.name}}</option>
+                                {{/each}}
                         </select>
                     </div>
                 </div>
@@ -230,49 +112,129 @@
             <button>Submit Parent Edit</button>
         </form>
     </div>
+        <div class="col">
+        <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Edit Student</legend>
+        <form id="edit_student">
+            <div class="form-group">
+                <label class="col-md-4 control-label">Select student </label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="student_id_edit" name="student_id" class="form-control selectpicker">
+                            <option value=" ">Select the student to edit </option>
+                           {{#each studentData as |student|}}
+                                <option value={{student.id}}>{{student.name}}</option>
+                                {{/each}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Name</label>
+                <div class="inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="student_name_edit" name="name" placeholder="Name" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Select Group</label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="student_groupid_edit" name="new_group_id" class="form-control selectpicker">
+                            <option value=" ">Select the students new group </option>
+                            {{#each groupData as |group|}}
+                                <option value={{group.id}}>{{group.id}}</option>
+                                {{/each}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Add Club</label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="add_club" name="add_club" class="form-control selectpicker">
+                            <option value=" ">Select the students new club </option>
+                           {{#each clubData as |club|}}
+                                <option value={{club.id}}>{{club.activity}}</option>
+                                {{/each}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Remove Club</label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="remove_club" name="remove_club" class="form-control selectpicker">
+                            <option value=" ">Select the club to remove </option>
+                           {{#each clubData as |club|}}
+                                <option value={{club.id}}>{{club.activity}}</option>
+                                {{/each}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Add parent to student</label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="new_parent_id" name="new_parent_id" class="form-control selectpicker">
+                            <option value=" ">Select the  parent you wish to add</option>
+                            {{#each parentData as |parent|}}
+                                <option value={{parent.id}}>{{parent.name}}</option>
+                                {{/each}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Remove parent from student</label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="old_parent_id" name="old_parent_id" class="form-control selectpicker">
+                            <option value=" ">Select the parent you wish to remove </option>
+                            {{#each parentData as |parent|}}
+                                <option value={{parent.id}}>{{parent.name}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button>Submit Student Edit</button>
+        </form>
+        
+    </div>
 </div>
-{{!-- <div class="w-100 p-5">
-    <button class="btn btn-primary">Email students parents</button>
-    <select name="group" class="form-control selectpicker">
-        <option value=" ">Select the ID of the subject of the email</option>
-        <option>1{{id}}</option>
-        <option>2{{id}}</option>
-        <option>3{{id}}</option>
-        <option>4{{id}}</option>
-        <option>5{{id}}</option>
-    </select>
-    <textarea class="form-control h-100" aria-label="With textarea"></textarea>
-</div> --}}
 <div class="p-5">
-    <h2>Student</h2>
+    <h2>Students</h2>
     <table class="table">
         <thead>
             <tr class="bg-info rounded-top">
                 <th>ID</th>
                 <th>Name</th>
-                <th>Parent ID</th>
+                <th>Parent</th>
+                <th>Parent Email</th>
                 <th>Group ID</th>
             </tr>
         </thead>
         <tbody>
+        {{#each teacherInfo.group.students as | student|}}
             <tr>
-                <td>ID 1</td>
-                <td>Name</td>
-                <td>Parent</td>
-                <td>Group ID</td>
+                <td>{{student.id}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.parent.name}}</td>
+                <td>{{student.parent.email}}</td>
+                <td>{{student.group_id}}</td>
             </tr>
-            <tr>
-                <td>ID 2</td>
-                <td>Name</td>
-                <td>Parent</td>
-                <td>Group ID</td>
-            </tr>
-            <tr>
-                <td>ID 3</td>
-                <td>Name</td>
-                <td>Parent</td>
-                <td>Group ID</td>
-            </tr>
+        {{/each}}
         </tbody>
     </table>
 </div>
@@ -287,22 +249,14 @@
             </tr>
         </thead>
         <tbody>
+{{#each parentData as | parent |}}
             <tr>
-                <td>ID 1</td>
-                <td>Name</td>
-                <td>Email</td>
+                <td>{{parent.id}}</td>
+                <td>{{parent.name}}</td>
+                <td>{{parent.email}}</td>
             </tr>
-            <tr>
-                <td>ID 2</td>
-                <td>Name</td>
-                <td>Email</td>
-            </tr>
-            <tr>
-                <td>ID 3</td>
-                <td>Name</td>
-
-                <td>Email</td>
-            </tr>
+{{/each}}
         </tbody>
     </table>
 </div>
+<script src="/index.js"></script>
