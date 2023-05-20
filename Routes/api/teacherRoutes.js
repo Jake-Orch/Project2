@@ -70,16 +70,53 @@ router.post("/createstudent", async (req, res) => {
 });
 
 router.put("/editparent", async (req, res) => {
-  const { name, email, parent_id } = req.body;
+  const { name, email, parent_id, remove_parent } = req.body;
   try {
-    await Parent.update(
-      { name: name, email: email },
-      {
-        where: {
-          id: parent_id,
-        },
+    if (name !== null) {
+      try {
+        await Parent.update(
+          { name: name },
+          {
+            where: {
+              id: parent_id,
+            },
+          }
+        );
+      } catch (err) {
+        console.log(err);
       }
-    );
+    }
+    if (email !== null) {
+      try {
+        try {
+          await Parent.update(
+            { email: email },
+            {
+              where: {
+                id: parent_id,
+              },
+            }
+          );
+        } catch (err) {
+          console.log(err)
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    if (remove_parent == "yes") {
+      try {
+        await Parent.destroy(
+          {
+            where: {
+              id: parent_id
+            },
+          }
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    };
     res.redirect("back");
   } catch (err) {
     res.status(500).json(err);
@@ -87,38 +124,94 @@ router.put("/editparent", async (req, res) => {
 });
 
 router.put("/editstudent", async (req, res) => {
-  const { student_id, remove_club_id, remove_parent_id } = req.body;
-
-  if (remove_club_id !== " ") {
-    await Student.update(
-      { club_id: null },
-      { where: { club_id: remove_club_id, id: student_id } }
-    );
-  }
-  if (remove_parent_id !== " ") {
-    await Student.update(
-      { parent_id: null },
-      { where: { parent_id: remove_parent_id, id: student_id } }
-    );
-  }
-  const updatedReqBody = Object.keys(req.body).reduce((acc, key) => {
-    if (req.body[key] !== " ") {
-      acc[key] = req.body[key];
-    }
-    return acc;
-  }, {});
-  delete updatedReqBody.student_id;
-  delete updatedReqBody.remove_club_id;
-  delete updatedReqBody.remove_parent_id;
+  const { student_id, name, group_id, club_id, parent_id, remove_club, remove_student } = req.body;
   try {
-    await Student.update(updatedReqBody, {
-      where: {
-        id: student_id,
-      },
-    });
+    if (name !== null) {
+      try {
+        await Student.update(
+          { name: name },
+          {
+            where: {
+              id: student_id
+            },
+          }
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    if (group_id !== null) {
+      try {
+        await Student.update(
+          { group_id: group_id },
+          {
+            where: {
+              id: student_id
+            },
+          }
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    if (club_id !== null) {
+      try {
+        await Student.update(
+          { club_id: club_id },
+          {
+            where: {
+              id: student_id
+            },
+          }
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    if (parent_id !== null) {
+      try {
+        await Student.update(
+          { parent_id: parent_id },
+          {
+            where: {
+              id: student_id
+            },
+          }
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    if (remove_club == "yes") {
+      try {
+        await Student.update(
+          { club_id: null },
+          {
+            where: {
+              id: student_id
+            },
+          }
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    if (remove_student == "yes") {
+      try {
+        await Student.destroy(
+          {
+            where: {
+              id: student_id
+            },
+          }
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    };
     res.redirect("back");
-  } catch (error) {
-    res.json(error);
+  } catch (err) {
+    res.status(500).json(err)
   }
 });
 

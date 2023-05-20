@@ -1,9 +1,14 @@
-<h1 class="p-5 d-flex justify-content-center bg-primary">Portal</h1>
+<div class="title-holder">
+    <div class="d-flex justify-content-center rounded-pill shadow bg-primary title">
+        <h1 class="portal-title">Portal</h1>
+    </div>
+</div>
 <div class="row p-5">
     <div class="col">
         <form class="well form-horizontal" id="register_parent">
             <fieldset>
-                <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Register new parent</legend>
+                <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Register Parent
+                </legend>
                 <div class="form-group">
                     <label class="col-md-4 control-label">Name</label>
                     <div class="inputGroupContainer">
@@ -24,12 +29,12 @@
                 </div>
                 <button>Register Parent</button>
         </form>
-​
+        ​
     </div>
     <div class="col">
         <form class="well form-horizontal" id="register_student">
             <fieldset>
-                <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Register new student
+                <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Register Student
                 </legend>
                 <div class="form-group">
                     <label class="col-md-4 control-label">Name</label>
@@ -46,7 +51,7 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                             <select id="parent_id" name="parent_id" class="form-control selectpicker">
-                                <option value=" ">Plese select the students parents </option>
+                                <option value=" ">Select the students parents </option>
                                 {{#each parentData as |parent|}}
                                 <option value={{parent.id}}>{{parent.name}}</option>
                                 {{/each}}
@@ -71,7 +76,7 @@
                 <button>Register Student</button>
         </form>
     </div>
-    
+
 </div>
 <div class="row p-5">
     <div class="col">
@@ -85,8 +90,8 @@
                         <select id="editparent_id" name="parent_id" class="form-control selectpicker">
                             <option value=" ">Select the parent you wish edit </option>
                             {{#each parentData as |parent|}}
-                                <option value={{parent.id}}>{{parent.name}}</option>
-                                {{/each}}
+                            <option value={{parent.id}}>{{parent.name}}</option>
+                            {{/each}}
                         </select>
                     </div>
                 </div>
@@ -96,7 +101,8 @@
                 <div class="inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="editparent_name" name="new_parent_name" placeholder="Name" class="form-control" type="text">
+                        <input id="editparent_name" name="new_parent_name" placeholder="Name" class="form-control"
+                            type="text">
                     </div>
                 </div>
             </div>
@@ -105,14 +111,28 @@
                 <div class="inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="editparent_email" name="new_parent_email" placeholder="Email" class="form-control" type="text">
+                        <input id="editparent_email" name="new_parent_email" placeholder="Email" class="form-control"
+                            type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Remove Parent</label>
+                <div class="electContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select id="remove_parent" name="remove_parent" class="form-control selectpicker">
+                            <option value=" ">Remove Parent</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                     </div>
                 </div>
             </div>
             <button>Submit Parent Edit</button>
         </form>
     </div>
-        <div class="col">
+    <div class="col">
         <legend class="d-flex justify-content-center bg-secondary rounded-top w-50">Edit Student</legend>
         <form id="edit_student">
             <div class="form-group">
@@ -122,9 +142,9 @@
                         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                         <select id="student_id_edit" name="student_id" class="form-control selectpicker">
                             <option value=" ">Select the student to edit </option>
-                           {{#each studentData as |student|}}
-                                <option value={{student.id}}>{{student.name}}</option>
-                                {{/each}}
+                            {{#each studentData as |student|}}
+                            <option value={{student.id}}>{{student.name}}</option>
+                            {{/each}}
                         </select>
                     </div>
                 </div>
@@ -146,8 +166,8 @@
                         <select id="student_groupid_edit" name="new_group_id" class="form-control selectpicker">
                             <option value=" ">Select the students new group </option>
                             {{#each groupData as |group|}}
-                                <option value={{group.id}}>{{group.id}}</option>
-                                {{/each}}
+                            <option value={{group.id}}>{{group.id}}</option>
+                            {{/each}}
                         </select>
                     </div>
                 </div>
@@ -159,9 +179,9 @@
                         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                         <select id="add_club" name="add_club" class="form-control selectpicker">
                             <option value=" ">Select the students new club </option>
-                           {{#each clubData as |club|}}
-                                <option value={{club.id}}>{{club.activity}}</option>
-                                {{/each}}
+                            {{#each clubData as |club|}}
+                            <option value={{club.id}}>{{club.activity}}</option>
+                            {{/each}}
                         </select>
                     </div>
                 </div>
@@ -172,10 +192,9 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                         <select id="remove_club" name="remove_club" class="form-control selectpicker">
-                            <option value=" ">Select the club to remove </option>
-                           {{#each clubData as |club|}}
-                                <option value={{club.id}}>{{club.activity}}</option>
-                                {{/each}}
+                            <option value=" ">Remove Club</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
                         </select>
                     </div>
                 </div>
@@ -186,31 +205,30 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                         <select id="new_parent_id" name="new_parent_id" class="form-control selectpicker">
-                            <option value=" ">Select the  parent you wish to add</option>
+                            <option value=" ">Select the parent you wish to add</option>
                             {{#each parentData as |parent|}}
-                                <option value={{parent.id}}>{{parent.name}}</option>
-                                {{/each}}
+                            <option value={{parent.id}}>{{parent.name}}</option>
+                            {{/each}}
                         </select>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-4 control-label">Remove parent from student</label>
+                <label class="col-md-4 control-label">Remove Student</label>
                 <div class="electContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                        <select id="old_parent_id" name="old_parent_id" class="form-control selectpicker">
-                            <option value=" ">Select the parent you wish to remove </option>
-                            {{#each parentData as |parent|}}
-                                <option value={{parent.id}}>{{parent.name}}</option>
-                            {{/each}}
+                        <select id="remove_student" name="remove_student" class="form-control selectpicker">
+                            <option value=" ">Remove Student</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
                         </select>
                     </div>
                 </div>
             </div>
             <button>Submit Student Edit</button>
         </form>
-        
+
     </div>
 </div>
 <div class="p-5">
@@ -220,21 +238,21 @@
             <tr class="bg-info rounded-top">
                 <th>ID</th>
                 <th>Name</th>
-                <th>Parent</th>
-                <th>Parent Email</th>
+                <th>Parent ID</th>
                 <th>Group ID</th>
+                <th>Club ID</th>
             </tr>
         </thead>
         <tbody>
-        {{#each teacherInfo.group.students as | student|}}
+            {{#each studentData as | student|}}
             <tr>
                 <td>{{student.id}}</td>
                 <td>{{student.name}}</td>
-                <td>{{student.parent.name}}</td>
-                <td>{{student.parent.email}}</td>
+                <td>{{student.parent_id}}</td>
                 <td>{{student.group_id}}</td>
+                <td>{{student.club_id}}</td>
             </tr>
-        {{/each}}
+            {{/each}}
         </tbody>
     </table>
 </div>
@@ -249,13 +267,13 @@
             </tr>
         </thead>
         <tbody>
-{{#each parentData as | parent |}}
+            {{#each parentData as | parent |}}
             <tr>
                 <td>{{parent.id}}</td>
                 <td>{{parent.name}}</td>
                 <td>{{parent.email}}</td>
             </tr>
-{{/each}}
+            {{/each}}
         </tbody>
     </table>
 </div>
