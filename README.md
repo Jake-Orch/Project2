@@ -31,7 +31,7 @@ npm install, npm i bcrypt, npm i dotenv, npm i express, npm i handlebars, npm i 
 
 The following image is an example of the application:
 
-image.png
+![Screenshot-application](https://github.com/Jake-Orch/Project2/assets/80605132/057540e8-9a30-4722-b76e-08cc3977587c)
 
 ## Contributors
 
