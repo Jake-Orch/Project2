@@ -10,7 +10,7 @@ const routes = require('./Routes');
 
 //server setup
 const app = express();
-const port = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 // session set up middleware for passport
 app.use(session({
@@ -35,8 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(port, () => {
-    console.log(`server listening on port http://localhost:${port}.`);
+  app.listen(PORT, () => {
+    console.log(`server listening on port http://localhost:${PORT}.`);
   });
 });
 
