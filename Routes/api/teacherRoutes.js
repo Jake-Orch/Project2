@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Teacher, Student, Parent } = require("../../models");
+const { Teacher, Student, Parent, Group } = require("../../models");
 
 router.post("/login", async (req, res) => {
   console.log(req.body);
@@ -50,8 +50,16 @@ router.post("/logout", (req, res) => {
   }
 });
 
+router.post("/creategroup", async (req, res) => {
+  try {
+    await Group.create(req.body);
+    res.redirect("back");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.post("/createparent", async (req, res) => {
-  console.log(req.body)
   try {
     await Parent.create(req.body);
     res.redirect("back");
@@ -63,6 +71,43 @@ router.post("/createparent", async (req, res) => {
 router.post("/createstudent", async (req, res) => {
   try {
     await Student.create(req.body);
+    res.redirect("back");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.put("/editgroup", async (req, res) => {
+  const { group_id, delete_group } = req.body;
+  console.log(group_id);
+  try {
+    if (delete_group == "yes") {
+      try {
+        await Group.destroy(
+          {
+            where: {
+              id: group_id
+            },
+          }
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    // if (name !== null) {
+    //   try {
+    //     await Group.update(
+    //       { name: name },
+    //       {
+    //         where: {
+    //           id: group_id
+    //         }
+    //       }
+    //     )
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // }
     res.redirect("back");
   } catch (err) {
     res.status(500).json(err);
@@ -88,20 +133,16 @@ router.put("/editparent", async (req, res) => {
     }
     if (email !== null) {
       try {
-        try {
-          await Parent.update(
-            { email: email },
-            {
-              where: {
-                id: parent_id,
-              },
-            }
-          );
-        } catch (err) {
-          console.log(err)
-        }
+        await Parent.update(
+          { email: email },
+          {
+            where: {
+              id: parent_id,
+            },
+          }
+        );
       } catch (err) {
-        console.log(err);
+        console.log(err)
       }
     }
     if (remove_parent == "yes") {
