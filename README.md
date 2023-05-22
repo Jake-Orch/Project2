@@ -13,9 +13,9 @@ SafeKeeping is Nursery/school Management System
 
 It is an application for teachers to add data on students and their parents to a database.
 
-Users can also update information on each of the students and teachers that they have registered into the database.
+Users can also update information on each of the parents, students and groups that they have registered into the database.
 
-Teachers can also view all of the information on the data stored for parents and students in a table on the webpage.
+Teachers can also view all of the information on the data stored for parents, students and groups in a table on the webpage.
 
 ## Installation
 

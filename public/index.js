@@ -15,11 +15,11 @@ const handleStudentCreate = async (e) => {
   e.preventDefault();
   const name = document.querySelector("#student_name").value.trim();
   const parent_id = document.querySelector("#parent_id").value;
-  const group_id = document.querySelector("#group_id").value;
-  if (name && parent_id && group_id) {
+  // const group_id = document.querySelector("#group_id").value;
+  if (name && parent_id) {
     await fetch("/api/teacher/createstudent", {
       method: "POST",
-      body: JSON.stringify({ name, parent_id, group_id }),
+      body: JSON.stringify({ name, parent_id}),
       headers: { "Content-Type": "application/json" },
     });
   }
