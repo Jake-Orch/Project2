@@ -43,7 +43,7 @@ const handleStudentEdit = async (e) => {
   e.preventDefault();
   const student_id = document.querySelector("#student_id_edit").value;
   const name = document.querySelector("#student_name_edit").value.trim();
-  const group_id = document.querySelector("#student_groupid_edit").value;
+  // const group_id = document.querySelector("#student_groupid_edit").value;
   // const club_id = document.querySelector("#add_club").value;
   const parent_id = document.querySelector("#new_parent_id").value;
   // const remove_club = document.querySelector('#remove_club').value;
@@ -51,7 +51,7 @@ const handleStudentEdit = async (e) => {
 console.log(remove_student)
   await fetch("/api/teacher/editstudent", {
     method: "PUT",
-    body: JSON.stringify({ student_id, name, group_id, parent_id, remove_student }),
+    body: JSON.stringify({ student_id, name, parent_id, remove_student }),
     headers: { "Content-Type": "application/json" },
   });
 };

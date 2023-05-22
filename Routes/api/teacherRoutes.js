@@ -124,7 +124,7 @@ router.put("/editparent", async (req, res) => {
 });
 
 router.put("/editstudent", async (req, res) => {
-  const { student_id, name, group_id, parent_id, remove_student } = req.body;
+  const { student_id, name, parent_id, remove_student } = req.body;
   try {
     if (name !== null) {
       try {
@@ -140,20 +140,20 @@ router.put("/editstudent", async (req, res) => {
         console.log(err);
       }
     };
-    if (group_id !== null) {
-      try {
-        await Student.update(
-          { group_id: group_id },
-          {
-            where: {
-              id: student_id
-            },
-          }
-        );
-      } catch (err) {
-        console.log(err);
-      }
-    };
+    // if (group_id !== null) {
+    //   try {
+    //     await Student.update(
+    //       { group_id: group_id },
+    //       {
+    //         where: {
+    //           id: student_id
+    //         },
+    //       }
+    //     );
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // };
     // if (club_id !== null) {
     //   try {
     //     await Student.update(
