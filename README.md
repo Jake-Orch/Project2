@@ -25,9 +25,11 @@ npm install, npm i bcrypt, npm i dotenv, npm i express, npm i handlebars, npm i 
 
 ## Usage
 
-The following image is an example of the application:
+Following is an example image of the application and the deployed link:
 
-![Screenshot-application](https://github.com/Jake-Orch/Project2/assets/80605132/057540e8-9a30-4722-b76e-08cc3977587c)
+https://github.com/Jake-Orch/Project2/blob/main/public/assets/images/Screenshot-application.jpg
+
+https://safekeeping.herokuapp.com/
 
 ## Contributors
 
