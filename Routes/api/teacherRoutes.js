@@ -124,7 +124,7 @@ router.put("/editparent", async (req, res) => {
 });
 
 router.put("/editstudent", async (req, res) => {
-  const { student_id, name, group_id, club_id, parent_id, remove_club, remove_student } = req.body;
+  const { student_id, name, group_id, parent_id, remove_student } = req.body;
   try {
     if (name !== null) {
       try {
@@ -154,20 +154,20 @@ router.put("/editstudent", async (req, res) => {
         console.log(err);
       }
     };
-    if (club_id !== null) {
-      try {
-        await Student.update(
-          { club_id: club_id },
-          {
-            where: {
-              id: student_id
-            },
-          }
-        );
-      } catch (err) {
-        console.log(err);
-      }
-    };
+    // if (club_id !== null) {
+    //   try {
+    //     await Student.update(
+    //       { club_id: club_id },
+    //       {
+    //         where: {
+    //           id: student_id
+    //         },
+    //       }
+    //     );
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // };
     if (parent_id !== null) {
       try {
         await Student.update(
@@ -182,20 +182,20 @@ router.put("/editstudent", async (req, res) => {
         console.log(err);
       }
     };
-    if (remove_club == "yes") {
-      try {
-        await Student.update(
-          { club_id: null },
-          {
-            where: {
-              id: student_id
-            },
-          }
-        );
-      } catch (err) {
-        console.log(err);
-      }
-    };
+    // if (remove_club == "yes") {
+    //   try {
+    //     await Student.update(
+    //       { club_id: null },
+    //       {
+    //         where: {
+    //           id: student_id
+    //         },
+    //       }
+    //     );
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // };
     if (remove_student == "yes") {
       try {
         await Student.destroy(

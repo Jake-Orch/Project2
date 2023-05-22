@@ -44,14 +44,14 @@ const handleStudentEdit = async (e) => {
   const student_id = document.querySelector("#student_id_edit").value;
   const name = document.querySelector("#student_name_edit").value.trim();
   const group_id = document.querySelector("#student_groupid_edit").value;
-  const club_id = document.querySelector("#add_club").value;
+  // const club_id = document.querySelector("#add_club").value;
   const parent_id = document.querySelector("#new_parent_id").value;
-  const remove_club = document.querySelector('#remove_club').value;
+  // const remove_club = document.querySelector('#remove_club').value;
   const remove_student = document.querySelector('#remove_student').value;
 console.log(remove_student)
   await fetch("/api/teacher/editstudent", {
     method: "PUT",
-    body: JSON.stringify({ student_id, name, group_id, club_id, parent_id, remove_club, remove_student }),
+    body: JSON.stringify({ student_id, name, group_id, parent_id, remove_student }),
     headers: { "Content-Type": "application/json" },
   });
 };
