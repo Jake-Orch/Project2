@@ -1,7 +1,3 @@
-# project2-jo-aa-ys-pt
-
-Nursery/After-school - Booking System
-
 # Project2 - SafeKeeping
 
 ## Table of Contents
