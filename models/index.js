@@ -28,13 +28,13 @@ Group.belongsTo(Teacher, {
     onDelete: 'CASCADE'
 });
 
-Teacher.hasOne(Club, {
-    foreignKey: 'teacher_id',
-});
-Club.belongsTo(Teacher, {
-    foreignKey: 'teacher_id',
-    onDelete: 'CASCADE'
-});
+// Teacher.hasOne(Club, {
+//     foreignKey: 'teacher_id',
+// });
+// Club.belongsTo(Teacher, {
+//     foreignKey: 'teacher_id',
+//     onDelete: 'CASCADE'
+// });
 
 Club.hasMany(Student, {
     foreignKey: 'club_id',
