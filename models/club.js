@@ -23,7 +23,7 @@ Club.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    activity: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     }

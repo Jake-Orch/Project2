@@ -1,22 +1,22 @@
 [
     {
         "day_of_club": "Monday",
-        "activity": "Painting"
+        "name": "Painting"
     },
     {
         "day_of_club": "Tuesday",
-        "activity": "Football"
+        "name": "Football"
     },
     {
         "day_of_club": "Wednesday",
-        "activity": "Hockey"
+        "name": "Hockey"
     },
     {
         "day_of_club": "Thursday",
-        "activity": "Tennis"
+        "name": "Tennis"
     },
     {
         "day_of_club": "Friday",
-        "activity": "Chess"
+        "name": "Chess"
     }
 ]

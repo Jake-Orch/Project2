@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Teacher, Student, Parent, Group } = require("../../models");
+const { Teacher, Student, Parent, Group, Club } = require("../../models");
 
 router.post("/login", async (req, res) => {
   console.log(req.body);
@@ -59,6 +59,15 @@ router.post("/creategroup", async (req, res) => {
   }
 });
 
+router.post("/createclub", async (req, res) => {
+  try {
+    await Club.create(req.body);
+    res.redirect("back");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.post("/createparent", async (req, res) => {
   try {
     await Parent.create(req.body);
@@ -78,7 +87,7 @@ router.post("/createstudent", async (req, res) => {
 });
 
 router.put("/editgroup", async (req, res) => {
-  const { group_id, delete_group } = req.body;
+  const { group_id, delete_group, name } = req.body;
   console.log(group_id);
   try {
     if (delete_group == "yes") {
@@ -94,20 +103,70 @@ router.put("/editgroup", async (req, res) => {
         console.log(err);
       }
     }
-    // if (name !== null) {
-    //   try {
-    //     await Group.update(
-    //       { name: name },
-    //       {
-    //         where: {
-    //           id: group_id
-    //         }
-    //       }
-    //     )
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // }
+    if (name !== null) {
+      try {
+        await Group.update(
+          { name: name },
+          {
+            where: {
+              id: group_id
+            }
+          }
+        )
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    res.redirect("back");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.put("/editclub", async (req, res) => {
+  const { club_id, delete_club, name, day_of_club } = req.body;
+  try {
+    if (delete_club == "yes") {
+      try {
+        await Club.destroy(
+          {
+            where: {
+              id: club_id
+            },
+          }
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    if (name !== null) {
+      try {
+        await Club.update(
+          { name: name },
+          {
+            where: {
+              id: club_id
+            }
+          }
+        )
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    if (day_of_club !== null) {
+      try {
+        await Club.update(
+          { day_of_club: day_of_club },
+          {
+            where: {
+              id: club_id
+            }
+          }
+        )
+      } catch (err) {
+        console.log(err);
+      }
+    }
     res.redirect("back");
   } catch (err) {
     res.status(500).json(err);

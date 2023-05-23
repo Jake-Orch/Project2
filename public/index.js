@@ -4,7 +4,22 @@ const handleGroupCreate = async (e) => {
   if (name) {
     await fetch("/api/teacher/creategroup", {
       method: "POST",
-      body: JSON.stringify({ name }),
+      body: JSON.stringify({name}),
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+};
+
+const handleClubCreate = async (e) => {
+  e.preventDefault();
+  const name = document.querySelector("#create_club_name").value.trim();
+  const day = document.querySelector('#club_day').value;
+  console.log(name);
+  console.log(day)
+  if (name && day) {
+    await fetch("/api/teacher/createclub", {
+      method: "POST",
+      body: JSON.stringify({name, day}),
       headers: { "Content-Type": "application/json" },
     });
   }
@@ -40,11 +55,24 @@ const handleStudentCreate = async (e) => {
 const handleGroupEdit = async (e) => {
   e.preventDefault();
   const group_id = document.querySelector("#edit_group_id").value;
-  // const new_name = document.querySelector("#new_group_name").value.trim();
+  const name = document.querySelector("#new_group_name").value.trim();
   const delete_group = document.querySelector("#delete_group").value;
   await fetch("/api/teacher/editgroup", {
     method: "PUT",
-    body: JSON.stringify({ group_id, delete_group }),
+    body: JSON.stringify({ group_id, delete_group, name }),
+    headers: { "Content-Type": "application/json" },
+  });
+};
+
+const handleClubEdit = async (e) => {
+  e.preventDefault();
+  const club_id = document.querySelector("#edit_club_id").value;
+  const name = document.querySelector("#new_club_name").value.trim();
+  const day_of_club = document.querySelector("#edit_club_day").value;
+  const delete_club = document.querySelector("#delete_club").value;
+  await fetch("/api/teacher/editclub", {
+    method: "PUT",
+    body: JSON.stringify({ club_id, delete_club, name, day_of_club }),
     headers: { "Content-Type": "application/json" },
   });
 };
@@ -84,6 +112,9 @@ document
   .querySelector("#create_group")
   .addEventListener("submit", handleGroupCreate);
 document
+  .querySelector("#create_club")
+  .addEventListener("submit", handleClubCreate);
+document
   .querySelector("#register_student")
   .addEventListener("submit", handleStudentCreate);
 document
@@ -92,6 +123,9 @@ document
 document
   .querySelector("#edit_group")
   .addEventListener("submit", handleGroupEdit);
+document
+  .querySelector("#edit_club")
+  .addEventListener("submit", handleClubEdit);
 document
   .querySelector("#edit_parent")
   .addEventListener("submit", handleParentEdit);
