@@ -60,10 +60,8 @@ router.post("/creategroup", async (req, res) => {
 });
 
 router.post("/createclub", async (req, res) => {
-  const {name, day_of_club} = req.body;
-  console.log(req.body);
   try {
-    await Club.create({name, day_of_club});
+    await Club.create(req.body);
     res.status(200);
   } catch (err) {
     res.status(500).json(err);
