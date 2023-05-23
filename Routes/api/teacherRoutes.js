@@ -60,9 +60,14 @@ router.post("/creategroup", async (req, res) => {
 });
 
 router.post("/createclub", async (req, res) => {
+  const {name, day_of_club} = req.body;
+  console.log(req.body);
   try {
-    await Club.create(req.body);
+    await Club.create({name, day_of_club});
     res.redirect("back");
+    // res.redirect("back");
+    return
+    
   } catch (err) {
     res.status(500).json(err);
   }

@@ -13,13 +13,13 @@ const handleGroupCreate = async (e) => {
 const handleClubCreate = async (e) => {
   e.preventDefault();
   const name = document.querySelector("#create_club_name").value.trim();
-  const day = document.querySelector('#club_day').value;
+  const day_of_club = document.querySelector('#club_day').value;
   console.log(name);
-  console.log(day)
-  if (name && day) {
+  console.log(day_of_club)
+  if (name && day_of_club) {
     await fetch("/api/teacher/createclub", {
       method: "POST",
-      body: JSON.stringify({name, day}),
+      body: JSON.stringify({name, day_of_club}),
       headers: { "Content-Type": "application/json" },
     });
   }
