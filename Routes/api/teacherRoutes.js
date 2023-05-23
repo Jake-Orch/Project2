@@ -53,7 +53,7 @@ router.post("/logout", (req, res) => {
 router.post("/creategroup", async (req, res) => {
   try {
     await Group.create(req.body);
-    res.redirect("back");
+    res.status(200);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -64,10 +64,7 @@ router.post("/createclub", async (req, res) => {
   console.log(req.body);
   try {
     await Club.create({name, day_of_club});
-    res.redirect("back");
-    // res.redirect("back");
-    return
-    
+    res.status(200);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -76,7 +73,7 @@ router.post("/createclub", async (req, res) => {
 router.post("/createparent", async (req, res) => {
   try {
     await Parent.create(req.body);
-    res.redirect("back");
+    res.status(200);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -85,7 +82,7 @@ router.post("/createparent", async (req, res) => {
 router.post("/createstudent", async (req, res) => {
   try {
     await Student.create(req.body);
-    res.redirect("back");
+    res.status(200);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -107,8 +104,7 @@ router.put("/editgroup", async (req, res) => {
       } catch (err) {
         console.log(err);
       }
-    }
-    if (name !== null) {
+    } else if (name !== null) {
       try {
         await Group.update(
           { name: name },
@@ -122,7 +118,7 @@ router.put("/editgroup", async (req, res) => {
         console.log(err);
       }
     }
-    res.redirect("back");
+    res.status(200);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -172,7 +168,7 @@ router.put("/editclub", async (req, res) => {
         console.log(err);
       }
     }
-    res.redirect("back");
+    res.status(200);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -222,7 +218,7 @@ router.put("/editparent", async (req, res) => {
         console.log(err);
       }
     };
-    res.redirect("back");
+    res.status(200);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -314,7 +310,7 @@ router.put("/editstudent", async (req, res) => {
         console.log(err);
       }
     };
-    res.redirect("back");
+    res.status(200);
   } catch (err) {
     res.status(500).json(err)
   }
